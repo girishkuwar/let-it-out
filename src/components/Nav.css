@@ -30,11 +30,11 @@
 
 .tglmode:checked + .toggle-label {
   background: #222;
-  box-shadow: 0 0 8px cyan;
+  box-shadow: 0 0 8px #3399ff;
 }
 
 .tglmode:checked + .toggle-label::after {
   left: 28px;
-  background: cyan;
-  box-shadow: 0 0 6px cyan;
+  background: #3399ff;
+  box-shadow: 0 0 6px #3399ff;
 }

@@ -1,7 +1,7 @@
 # Let It Out 😶‍🌫️
 > **Anonymous Confession Platform — Write Your Feelings, Let the World See, No Replies, No Judgement**
 
-![Let It Out Banner](https://via.placeholder.com/1000x300?text=Let+It+Out+-+Anonymous+Confession+Platform](https://images.alphacoders.com/475/475526.jpg)
+![Let It Out Banner](https://images.alphacoders.com/475/475526.jpg)
 
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()

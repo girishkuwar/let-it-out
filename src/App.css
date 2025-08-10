@@ -1,11 +1,11 @@
 /* Base variables for light theme */
 :root {
-  --bg-color: #fefefe;
+  --bg-color: #d5d4d4;
   --text-color: #222;
-  --nav-bg: #fff;
+  --nav-bg: #bfbfbf;
   --nav-border: #ddd;
-  --link-color: #007bff;
-  --card-bg: #fff;
+  --link-color: #3399ff;
+  --card-bg: #e3e3e3;
   --tag-color: #666;
   --footer-color: #999;
   --btn-bg: #007bff;

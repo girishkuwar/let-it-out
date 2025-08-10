@@ -1,0 +1,40 @@
+/* Toggle button */
+.tglmode {
+  display: none;
+}
+
+.toggle-label {
+  width: 50px;
+  height: 25px;
+  background: #ccc;
+  display: block;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.4s ease;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.toggle-label::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 19px;
+  height: 19px;
+  background: white;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.tglmode:checked + .toggle-label {
+  background: #222;
+  box-shadow: 0 0 8px cyan;
+}
+
+.tglmode:checked + .toggle-label::after {
+  left: 28px;
+  background: cyan;
+  box-shadow: 0 0 6px cyan;
+}

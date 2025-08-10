@@ -1,15 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from "react-router-dom";
-import { db } from "../firebase.config";
-import {
-  collection,
-  query,
-  orderBy,
-  addDoc,
-  serverTimestamp,
-  onSnapshot,
-  getDocs,
-} from "firebase/firestore";
 import "./App.css";
 import Nav from "./components/Nav";
 import HomePage from "./pages/HomePage";

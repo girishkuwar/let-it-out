@@ -1,4 +1,8 @@
+@import "tailwindcss";
+
 /* Base variables for light theme */
+
+
 :root {
   --bg-color: #d5d4d4;
   --text-color: #222;

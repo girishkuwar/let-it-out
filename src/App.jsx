@@ -5,6 +5,7 @@ import Nav from "./components/Nav";
 import HomePage from "./pages/HomePage";
 import WriteConfession from "./pages/WriteConfession";
 import RandomConfession from "./pages/RandomConfession";
+import Sample from "./pages/Sample";
 
 
 export default function App() {
@@ -32,6 +33,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/write" element={<WriteConfession />} />
           <Route path="/random" element={<RandomConfession />} />
+          <Route path="/sample" element={<Sample />} />
         </Routes>
         <footer className="footer">
           If you're in distress or thinking of self-harm, please contact local emergency services or a suicide prevention hotline.

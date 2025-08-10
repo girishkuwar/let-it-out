@@ -1,41 +1,71 @@
-import { collection, getDocs, orderBy, query } from '@firebase/firestore';
-import React, { useEffect, useState } from 'react';
-import { db } from '../../firebase.config';
+import React, { useState, useEffect } from "react";
+import { db } from "../../firebase.config";
+import { collection, getDocs } from "firebase/firestore";
 
-const RandomConfession = () => {
-    const [confession, setConfession] = useState(null);
-    const [loading, setLoading] = useState(true);
+export default function RandomConfession() {
+  const [confessions, setConfessions] = useState([]);
+  const [currentConfession, setCurrentConfession] = useState(null);
 
-    useEffect(() => {
-        async function fetchRandom() {
-            const q = query(collection(db, "confessions"), orderBy("createdAt", "desc"));
-            const snap = await getDocs(q);
-            const docs = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
-            if (docs.length === 0) {
-                setConfession(null);
-            } else {
-                const r = Math.floor(Math.random() * docs.length);
-                setConfession(docs[r]);
-            }
-            setLoading(false);
-        }
-        fetchRandom();
-    }, []);
+  // Fetch all confessions once on mount
+  useEffect(() => {
+    const fetchData = async () => {
+      const snapshot = await getDocs(collection(db, "confessions"));
+      const data = snapshot.docs.map(doc => doc.data().text); // Assuming field is "text"
+      setConfessions(data);
 
+      if (data.length > 0) {
+        setCurrentConfession(data[Math.floor(Math.random() * data.length)]);
+      }
+    };
 
-    return (
-        <main className="container">
-            <h1>Random Confession</h1>
-            {loading && <p>Loading...</p>}
-            {!loading && !confession && <p className="empty-msg">No confessions yet.</p>}
-            {confession && (
-                <article className="card">
-                    <div className="tag-date">{confession.tag || "General"}</div>
-                    <p className="confession-text">{confession.text}</p>
-                </article>
-            )}
-        </main>
-    );
-};
+    fetchData();
+  }, []);
 
-export default RandomConfession;
+  // Change confession on button click
+  const getRandomConfession = () => {
+    if (confessions.length > 0) {
+      let newConfession;
+      do {
+        newConfession = confessions[Math.floor(Math.random() * confessions.length)];
+      } while (newConfession === currentConfession && confessions.length > 1);
+      setCurrentConfession(newConfession);
+    }
+  };
+
+  return (
+    <div style={{
+      maxWidth: "600px",
+      margin: "auto",
+      padding: "20px",
+      background: "#1e1e1e",
+      borderRadius: "10px",
+      color: "white",
+      textAlign: "center",
+      boxShadow: "0 4px 15px rgba(0,0,0,0.4)"
+    }}>
+      <h2>Random Confession</h2>
+      {currentConfession ? (
+        <p style={{ marginTop: "20px", fontSize: "1.2rem", transition: "opacity 0.5s ease" }}>
+          {currentConfession}
+        </p>
+      ) : (
+        <p>Loading...</p>
+      )}
+      <button
+        onClick={getRandomConfession}
+        style={{
+          marginTop: "50px",
+          padding: "10px 20px",
+          background: "#4bc6ffff",
+          border: "none",
+          borderRadius: "8px",
+          cursor: "pointer",
+          color: "white",
+          fontSize: "1rem"
+        }}
+      >
+        New Confession
+      </button>
+    </div>
+  );
+}

@@ -51,5 +51,14 @@ No accounts, no replies, no judgement — just a space to let your feelings out.
 
 ---
 
-## 📂 Project Structure
+## 🔒 Security & Privacy
 
+No IP logging.
+No tracking cookies.
+Firebase rules prevent content modification after posting.
+
+## 🧑‍💻 Contributing
+
+We welcome contributions!
+Fork the repo.
+Create a new branch:

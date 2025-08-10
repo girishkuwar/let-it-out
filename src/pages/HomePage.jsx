@@ -84,7 +84,7 @@ const HomePage = () => {
                 <p className="empty-msg">Be the first to share something.</p>
             )}
 
-            <div className="grid grid-cols-2 gap-1">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 place-items-center">
                 {confessions.map((c) => (
                     <article
                         key={c.id}
@@ -93,7 +93,7 @@ const HomePage = () => {
                         <p className="confession-text px-1 py-4">{c.text}</p>
                         <div className="px-2 pt-4 pb-2 flex justify-between items-center">
                             <span className="inline-block text-sm text-gray-500">
-                                {c.tag || "General"}
+                                {c.tag || "General"} 
                             </span>
                             <span className="date inline-block text-sm text-gray-500">
                                 {c.createdAt?.toDate

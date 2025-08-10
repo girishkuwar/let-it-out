@@ -60,5 +60,8 @@ Firebase rules prevent content modification after posting.
 ## 🧑‍💻 Contributing
 
 We welcome contributions!
-Fork the repo.
-Create a new branch:
+1. Fork the repo.
+2. Create a new branch:
+
+## 🔗 Links
+[LetItOutDude]([https://www.example.com](https://letitoutdude.vercel.app/))
